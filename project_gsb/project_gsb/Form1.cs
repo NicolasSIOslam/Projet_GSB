@@ -21,8 +21,8 @@ namespace project_gsb
         {
             try
             {
-                int test;
-                int bernard; 
+                int test = 0;
+                int bernard;
                 ConnexionSql.getInstance();
                 dataGridView.DataSource = ConnexionSql.test();
                 dataGridView.DataMember = "Test";
