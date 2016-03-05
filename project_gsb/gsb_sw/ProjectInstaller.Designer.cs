@@ -42,6 +42,7 @@
             this.serviceInstaller1.Description = "Automatisation de gsb";
             this.serviceInstaller1.DisplayName = "gsb_sw";
             this.serviceInstaller1.ServiceName = "gsb_sw";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

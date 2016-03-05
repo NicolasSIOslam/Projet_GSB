@@ -47,7 +47,8 @@ namespace gsb_sw
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             time.Stop();
-
+            MessageBox.Show("test");
+            /*
             if (gDate.jourCourrant() == 1)
             {
                 ConnexionSql.setCL(gDate.moisPrecedent());
@@ -56,7 +57,7 @@ namespace gsb_sw
             {
                 ConnexionSql.setRB(gDate.moisPrecedent());
             }
-
+            */
             time.Enabled = true;
         }
     }
