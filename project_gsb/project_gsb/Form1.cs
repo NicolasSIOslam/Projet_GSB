@@ -19,9 +19,9 @@ namespace project_gsb
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int a = 2;
+            int a = 1;
 
-            while (a < 10)
+            while (a < 100)
             {
                 a++;
             }
