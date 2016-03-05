@@ -13,6 +13,7 @@ namespace project_gsb
     public partial class Form1 : Form
     {
         static Timer time = new Timer();
+        static GestionDate gDate;
 
         public Form1()
         {
@@ -25,7 +26,12 @@ namespace project_gsb
             {
                 ConnexionSql.getInstance();
                 dataGridView.DataSource = ConnexionSql.test();
-                dataGridView.DataMember = "Test";
+
+                gDate = new GestionDate();
+
+                time.Tick += new EventHandler(TimerEventProcessor);
+                time.Interval = 30000;
+                time.Start();
             }
             catch (Exception ex)
             {
@@ -36,16 +42,8 @@ namespace project_gsb
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             time.Stop();
-            MessageBox.Show("Restart");
+            
             time.Enabled = true;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            time.Tick += new EventHandler(TimerEventProcessor);
-
-            time.Interval = 30000; 
-            time.Start();
         }
     }
 }
