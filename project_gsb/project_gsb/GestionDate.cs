@@ -30,5 +30,14 @@ namespace project_gsb
             }
             return mois;
         }
+        /// <summary>
+        /// 
+        /// Retourne le numero du jour actuel
+        /// </summary>
+        /// <returns>int</returns>
+        public int jourCourrant()
+        {
+            return DateTime.Now.Day;
+        }
     }
 }
