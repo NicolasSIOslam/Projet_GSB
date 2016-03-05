@@ -12,6 +12,8 @@ namespace project_gsb
 {
     public partial class Form1 : Form
     {
+        static Timer time = new Timer();
+
         public Form1()
         {
             InitializeComponent();
@@ -21,8 +23,6 @@ namespace project_gsb
         {
             try
             {
-                int test = 0;
-                int bernard;
                 ConnexionSql.getInstance();
                 dataGridView.DataSource = ConnexionSql.test();
                 dataGridView.DataMember = "Test";
@@ -31,6 +31,21 @@ namespace project_gsb
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
+        {
+            time.Stop();
+            MessageBox.Show("Restart");
+            time.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            time.Tick += new EventHandler(TimerEventProcessor);
+
+            time.Interval = 30000; 
+            time.Start();
         }
     }
 }
