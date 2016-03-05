@@ -29,7 +29,7 @@ namespace project_gsb
                 gDate = new GestionDate();
 
                 time.Tick += new EventHandler(TimerEventProcessor);
-                time.Interval = 30000;
+                time.Interval = 5000;
                 time.Start();
             }
             catch (Exception ex)
@@ -42,7 +42,8 @@ namespace project_gsb
         {
             time.Stop();
 
-            if(gDate.jourCourrant() == 1)
+            MessageBox.Show("testests");/*
+            if (gDate.jourCourrant() == 1)
             {
                 
             }
@@ -50,7 +51,7 @@ namespace project_gsb
             {
 
             }
-
+            */
             time.Enabled = true;
         }
     }

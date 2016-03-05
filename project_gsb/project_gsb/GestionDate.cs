@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace project_gsb
 {
@@ -21,14 +22,15 @@ namespace project_gsb
         /// Retourne le mois d'avant le mois en cours
         /// </summary>
         /// <returns></returns>
-        public int moisPrecedent()
+        public string moisPrecedent()
         {
-            int mois = DateTime.Now.Month;
+            string mois = DateTime.Now.Month.ToString();
             if (DateTime.Now.Month - 1 == 0)
             {
-                mois = 12;
+                mois = "12";
             }
-            return mois;
+            MessageBox.Show(DateTime.Now.Year + mois);
+            return DateTime.Now.Year+mois;
         }
         /// <summary>
         /// 

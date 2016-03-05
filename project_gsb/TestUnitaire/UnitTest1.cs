@@ -8,11 +8,11 @@ namespace TestUnitaire
     public class UnitTest1
     {
         [TestMethod]
-        public void getinstant()
+        public void Testjour()
         {
-            
+            project_gsb.GestionDate() gd = new project_gsb.GestionDate();
 
-            Assert.AreSame(,test);
+            Assert.AreSame(,DateTime.Now.Day);
         }
     }
 }
