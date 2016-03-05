@@ -24,12 +24,17 @@ namespace project_gsb
         /// <returns></returns>
         public string moisPrecedent()
         {
-            string mois = DateTime.Now.Month.ToString();
+            string mois = (DateTime.Now.Month-1).ToString();
+            if(mois.Length == 1)
+            {
+                mois = "0" + mois;
+            }
+
             if (DateTime.Now.Month - 1 == 0)
             {
                 mois = "12";
             }
-            MessageBox.Show(DateTime.Now.Year + mois);
+            
             return DateTime.Now.Year+mois;
         }
         /// <summary>

@@ -18,10 +18,7 @@ namespace project_gsb
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            
             try
             {
                 ConnexionSql.getInstance();
@@ -38,20 +35,15 @@ namespace project_gsb
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             time.Stop();
-
-            /*
-            if (gDate.jourCourrant() == 1)
-            {
-                
-            }
-            else if(gDate.jourCourrant() == 20)
-            {
-
-            }
-            */
+            ConnexionSql.getInstance();
+            ConnexionSql.setCL(gDate.moisPrecedent());
             time.Enabled = true;
         }
     }
