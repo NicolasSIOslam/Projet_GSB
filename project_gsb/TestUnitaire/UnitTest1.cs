@@ -10,9 +10,9 @@ namespace TestUnitaire
         [TestMethod]
         public void Testjour()
         {
-            project_gsb.GestionDate() gd = new project_gsb.GestionDate();
+            //project_gsb.GestionDate() gd = new project_gsb.GestionDate();
 
-            Assert.AreSame(,DateTime.Now.Day);
+            //Assert.AreSame(,DateTime.Now.Day);
         }
     }
 }

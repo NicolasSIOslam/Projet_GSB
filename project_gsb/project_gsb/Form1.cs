@@ -42,7 +42,7 @@ namespace project_gsb
         {
             time.Stop();
 
-            MessageBox.Show("testests");/*
+            /*
             if (gDate.jourCourrant() == 1)
             {
                 
