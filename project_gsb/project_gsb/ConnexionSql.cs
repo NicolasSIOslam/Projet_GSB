@@ -94,5 +94,22 @@ namespace project_gsb
 
             return ds;
         }
+
+        public static DataSet setRB(string mois)
+        {
+            try
+            {
+                ConnexionSql.OpenConnection();
+                adapter = new MySqlDataAdapter("UPDATE fichefrais SET idEtat = 'RB' WHERE idEtat = 'VA' and mois = " + mois, connect);
+                adapter.Fill(ds, "Test");
+                ConnexionSql.CloseConnection();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return ds;
+        }
     }
 }

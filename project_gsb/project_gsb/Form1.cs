@@ -42,8 +42,15 @@ namespace project_gsb
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             time.Stop();
-            ConnexionSql.getInstance();
-            ConnexionSql.setCL(gDate.moisPrecedent());
+
+            if (gDate.jourCourrant() == 1)
+            {
+                ConnexionSql.setCL(gDate.moisPrecedent());
+            }
+            else if (true)
+            {
+                ConnexionSql.setRB(gDate.moisPrecedent());
+            }
             time.Enabled = true;
         }
     }
