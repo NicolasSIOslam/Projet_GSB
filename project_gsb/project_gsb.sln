@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project_gsb", "project_gsb\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitaire", "TestUnitaire\TestUnitaire.csproj", "{B002A3F2-677D-4B7F-B65B-B69A261BBCC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gsb_sw", "gsb_sw\gsb_sw.csproj", "{572AE06B-5FEF-45C8-B8F7-BBBFF842F772}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B002A3F2-677D-4B7F-B65B-B69A261BBCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B002A3F2-677D-4B7F-B65B-B69A261BBCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B002A3F2-677D-4B7F-B65B-B69A261BBCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572AE06B-5FEF-45C8-B8F7-BBBFF842F772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572AE06B-5FEF-45C8-B8F7-BBBFF842F772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572AE06B-5FEF-45C8-B8F7-BBBFF842F772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572AE06B-5FEF-45C8-B8F7-BBBFF842F772}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
