@@ -8,5 +8,10 @@ namespace project_gsb
 {
     class GestionDate
     {
+        private int dateCourrant()
+        {
+            return DateTime.Now.Month;
+        }
+
     }
 }
