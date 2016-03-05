@@ -55,12 +55,6 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\project_gsb\project_gsb.csproj">
-      <Project>{2f1c8d0d-4b88-449f-b102-fbe585476d46}</Project>
-      <Name>project_gsb</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

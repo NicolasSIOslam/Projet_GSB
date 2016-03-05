@@ -25,7 +25,7 @@ namespace gsb_sw
         {
             try
             {
-                // C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\appli_gsb.exe"
+                // C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe "C:\Users\Nicolas\Documents\Visual Studio 2015\Projects\appli_gsb\appli_gsb\bin\Debug\appli_gsb.exe"
                 ConnexionSql.getInstance();
 
                 gDate = new GestionDate();
