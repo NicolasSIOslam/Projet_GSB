@@ -78,12 +78,12 @@ namespace project_gsb
             }
         }
 
-        public static DataSet test()
+        public static DataSet setCL(string mois)
         {
             try
             {
                 ConnexionSql.OpenConnection();
-                adapter = new MySqlDataAdapter("Select * From utilisateur", connect);
+                adapter = new MySqlDataAdapter("UPDATE fichefrais SET idEtat = 'CL' WHERE mois = " + mois, connect);
                 adapter.Fill(ds, "Test");
                 ConnexionSql.CloseConnection();
             }

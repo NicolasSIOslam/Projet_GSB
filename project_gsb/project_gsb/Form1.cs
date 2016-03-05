@@ -25,7 +25,6 @@ namespace project_gsb
             try
             {
                 ConnexionSql.getInstance();
-                dataGridView.DataSource = ConnexionSql.test();
 
                 gDate = new GestionDate();
 
@@ -42,7 +41,16 @@ namespace project_gsb
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             time.Stop();
-            
+
+            if(gDate.jourCourrant() == 1)
+            {
+                
+            }
+            else if(gDate.jourCourrant() == 20)
+            {
+
+            }
+
             time.Enabled = true;
         }
     }
