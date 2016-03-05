@@ -19,11 +19,15 @@ namespace project_gsb
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int a = 2;
-
-            while (a < 100)
+            try
             {
-                a++;
+                ConnexionSql.getInstance();
+                dataGridView.DataSource = ConnexionSql.test();
+                dataGridView.DataMember = "Test";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
