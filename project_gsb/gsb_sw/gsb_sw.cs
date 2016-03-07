@@ -6,59 +6,71 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace gsb_sw
 {
     public partial class gsb_sw : ServiceBase
     {
-        static Timer time = new Timer();
-        static GestionDate gDate;
+         Timer time ;
+         GestionDate gDate;
+
+        //alt+ctrl+s pour accéder au log
 
         public gsb_sw()
         {
             InitializeComponent();
+            time =new Timer(new TimerCallback(miseajour),null,0,5000);
+            eventLog1 = new System.Diagnostics.EventLog();
+            if (!System.Diagnostics.EventLog.SourceExists("MySource"))
+            {
+                System.Diagnostics.EventLog.CreateEventSource(
+                    "MySource", "MyNewLog");
+            }
+            eventLog1.Source = "MySource";
+            eventLog1.Log = "MyNewLog";
         }
-
+       /// <summary>
+       /// Cette fonction est lancée au démarage
+       /// </summary>
+       /// <param name="args"></param>
+       
         protected override void OnStart(string[] args)
         {
             try
             {
                 // C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe "C:\Users\Nicolas\Documents\Visual Studio 2015\Projects\appli_gsb\appli_gsb\bin\Debug\appli_gsb.exe"
                 ConnexionSql.getInstance();
-
+                eventLog1.WriteEntry("In OnStart");
                 gDate = new GestionDate();
-
-                time.Tick += new EventHandler(TimerEventProcessor);
-                time.Interval = 5000;
-                time.Start();
+                
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                eventLog1.WriteEntry(ex.Message);
             }
         }
 
         protected override void OnStop()
         {
+            
         }
 
-        private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
+        public void miseajour(object obj)
         {
-            time.Stop();
-            MessageBox.Show("test");
-            /*
-            if (gDate.jourCourrant() == 1)
+            
+           
+            if (gDate.jourCourrant() < 11)
             {
                 ConnexionSql.setCL(gDate.moisPrecedent());
             }
-            else if (true)
+            else if (gDate.jourCourrant() > 19)
             {
                 ConnexionSql.setRB(gDate.moisPrecedent());
             }
-            */
-            time.Enabled = true;
+            
         }
     }
 }

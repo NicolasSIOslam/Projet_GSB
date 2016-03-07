@@ -77,25 +77,36 @@ namespace gsb_sw
                 MessageBox.Show(emp.Message);
             }
         }
-
-        public static DataSet setCL(string mois)
+        /// <summary>
+        /// update les lignes cr => cl
+        /// du mois dernier
+        /// </summary>
+        /// <param name="mois"></param>
+        /// <returns></returns>
+        public static string setCL(string mois)
         {
             try
             {
                 ConnexionSql.OpenConnection();
-                adapter = new MySqlDataAdapter("UPDATE fichefrais SET idEtat = 'CL' WHERE mois = " + mois, connect);
+                adapter = new MySqlDataAdapter("UPDATE fichefrais SET idEtat = 'CL' WHERE idEtat = 'CR' and mois = " + mois, connect);
                 adapter.Fill(ds, "Test");
                 ConnexionSql.CloseConnection();
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                return (e.Message);
+
             }
 
-            return ds;
+            return "UPDATE fichefrais SET idEtat = 'CL' WHERE idEtat = 'CR' and mois = " + mois;
         }
-
-        public static DataSet setRB(string mois)
+        /// <summary>
+        /// update les lignes rb => va
+        /// du mois dernier
+        /// </summary>
+        /// <param name="mois"></param>
+        /// <returns></returns>
+        public static string setRB(string mois)
         {
             try
             {
@@ -103,13 +114,15 @@ namespace gsb_sw
                 adapter = new MySqlDataAdapter("UPDATE fichefrais SET idEtat = 'RB' WHERE idEtat = 'VA' and mois = " + mois, connect);
                 adapter.Fill(ds, "Test");
                 ConnexionSql.CloseConnection();
+
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                return(e.Message);
+                
             }
 
-            return ds;
+            return "cool";
         }
     }
 }
