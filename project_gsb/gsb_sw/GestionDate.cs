@@ -24,6 +24,8 @@ namespace gsb_sw
         public string moisPrecedent()
         {
             string mois = (DateTime.Now.Month - 1).ToString();
+            string annee = DateTime.Now.Year.ToString();
+
             if (mois.Length == 1)
             {
                 mois = "0" + mois;
@@ -32,9 +34,10 @@ namespace gsb_sw
             if (DateTime.Now.Month - 1 == 0)
             {
                 mois = "12";
+                annee = (DateTime.Now.Year - 1).ToString();
             }
 
-            return DateTime.Now.Year + mois;
+            return annee + mois;
         }
         /// <summary>
         /// 
